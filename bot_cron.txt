@@ -1,0 +1,2 @@
+0 11 * * 1,3,5 /home/moe.janmohammad/xkcd_bot.py
+0 11 * * 2,4 /home/moe.janmohammad/xkcd_bot_random.py
