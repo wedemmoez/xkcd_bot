@@ -14,11 +14,3 @@ BOT process tree
 Questions:
 Is the functionality of the webhook beneficial to anyone?
 Will the function call actually be used?
-
-
-
-access_token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5"
-
-testing_room = "Y2lzY29zcGFyazovL3VzL1JPT00vNThhNDNhNjAtMDM1OS0xMWU3LWIwYmItYzU1Y2QwYTRiMjQz"
-youths_room = "Y2lzY29zcGFyazovL3VzL1JPT00vNTk4MTg0YjAtZTcwMi0xMWU2LWI4ZGYtODcxYzNjYmQ0ZDFm"
-innovation_room = "Y2lzY29zcGFyazovL3VzL1JPT00vOWZmNjBiYjAtOTBhMy0xMWU2LWI1MTktZTNhNWIwMjJmYTBm"
