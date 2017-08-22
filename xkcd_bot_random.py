@@ -36,7 +36,7 @@ num = str(r.randrange(0, xkcd_json[u'num'], 1))
 xkcd_json = requests.get("http://xkcd.com/"+num+"/info.0.json").json()
 img = xkcd_json[u'img']
 # formatted for Spark markown
-alt = "**Caption**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + num + ')**'
+alt = "**Hover Text**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + num + ')**'
 
 # Get Rooms, Parse JSON, psot to rooms tha bot is in
 room_dict = get_rooms(token)[u'items']
