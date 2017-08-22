@@ -40,6 +40,6 @@ alt = "**Caption**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + 
 
 # Get Rooms, Parse JSON, psot to rooms tha bot is in
 room_dict = get_rooms(token)[u'items']
-for i in range(0,len(room_dict)):
+for i in range(0, len(room_dict)):
     if room_dict[i][u'type'] == 'group':
         post_file(token, room_dict[i][u'id'], alt, img)

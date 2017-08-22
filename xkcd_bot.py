@@ -27,9 +27,6 @@ def post_file(at, roomId, markdown, url=''):
 
 #important stuff (sparkbot bearer toke to post to rooms)
 token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5"
-NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5
-
-
 # get json information for latest comic
 xkcd_json = requests.get("http://xkcd.com/info.0.json").json()
 img = xkcd_json[u'img']
@@ -39,7 +36,8 @@ alt = "**Caption**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + 
 
 # Get Rooms, Parse JSON, psot to rooms the bot is in
 room_dict = get_rooms(token)[u'items']
-for i in range(0,len(room_dict)):
+for i in range(0, len(room_dict)):
     #post only to rooms labeled as groups, do not send to individuals.
     if room_dict[i][u'type'] == 'group':
         post_file(token, room_dict[i][u'id'], alt, img)
+        
