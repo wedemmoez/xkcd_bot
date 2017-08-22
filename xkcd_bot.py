@@ -7,7 +7,7 @@ def _url(path):
     return 'https://api.ciscospark.com/v1' + path
 
 
-# Function to get list of rooms
+# Function to get list of all rooms that the bot is a member of
 def get_rooms(at):
     headers = {'Authorization': at, 'content-type': 'application/json; charset=utf-8'}
     resp = requests.get(url=_url('/rooms'), headers = headers)
@@ -25,8 +25,10 @@ def post_file(at, roomId, markdown, url=''):
     file_dict['statuscode'] = str(resp.status_code)
     return file_dict
 
-#important stuff
+#important stuff (sparkbot bearer toke to post to rooms)
 token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5"
+NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5
+
 
 # get json information for latest comic
 xkcd_json = requests.get("http://xkcd.com/info.0.json").json()
@@ -38,5 +40,6 @@ alt = "**Caption**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + 
 # Get Rooms, Parse JSON, psot to rooms the bot is in
 room_dict = get_rooms(token)[u'items']
 for i in range(0,len(room_dict)):
+    #post only to rooms labeled as groups, do not send to individuals.
     if room_dict[i][u'type'] == 'group':
         post_file(token, room_dict[i][u'id'], alt, img)
