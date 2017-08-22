@@ -1,7 +1,8 @@
 #!/usr/bin/python
+
 import json
-import requests
 import random as r
+import requests
 
 # URL Helper
 def _url(path):
@@ -29,12 +30,13 @@ def post_file(at, roomId, markdown, url=''):
 #important stuff
 token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5"
 
-num = str(r.randrange(0, 1851, 1))
+xkcd_json = requests.get("http://xkcd.com/info.0.json").json()
+num = str(r.randrange(0, xkcd_json[u'num'], 1))
 # pull json for random comic
 xkcd_json = requests.get("http://xkcd.com/"+num+"/info.0.json").json()
 img = xkcd_json[u'img']
 # formatted for Spark markown
-alt = "**Caption**: " + xkcd_json[u'alt']
+alt = "**Caption**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + num + ')**'
 
 # Get Rooms, Parse JSON, psot to rooms tha bot is in
 room_dict = get_rooms(token)[u'items']

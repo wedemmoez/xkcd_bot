@@ -32,9 +32,10 @@ token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5
 xkcd_json = requests.get("http://xkcd.com/info.0.json").json()
 img = xkcd_json[u'img']
 # formatted for Spark markown
-alt = "**Caption**: " + xkcd_json[u'alt']
+num = str(xkcd_json[u'num'])
+alt = "**Caption**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + num + ')**'
 
-# Get Rooms, Parse JSON, psot to rooms tha bot is in
+# Get Rooms, Parse JSON, psot to rooms the bot is in
 room_dict = get_rooms(token)[u'items']
 for i in range(0,len(room_dict)):
     if room_dict[i][u'type'] == 'group':
