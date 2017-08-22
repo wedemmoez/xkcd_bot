@@ -13,3 +13,6 @@ It will pull information for all rooms that it is in and post the same XKCD comi
 
 ##### Crontab
 the crontab configuration included is what we chose to run within our organization. Since a new XKCD comic is posted on Mondays, Wednesdays, and Fridays, the bot will post the latest comic on those days. For Tuesdays and Thursdays, the bot will post a random comic using the the random function to select a comic between 0 and the number of the current comic.
+
+##### Contact  
+For questions about the code please create an Issue. 
