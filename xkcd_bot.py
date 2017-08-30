@@ -1,6 +1,8 @@
 #!/usr/bin/python
 import json
 import requests
+#import token from credentials file
+from credentials import *
 
 # URL Helper
 def _url(path):
@@ -25,8 +27,6 @@ def post_file(at, roomId, markdown, url=''):
     file_dict['statuscode'] = str(resp.status_code)
     return file_dict
 
-#important stuff (sparkbot bearer toke to post to rooms)
-token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5"
 # get json information for latest comic
 xkcd_json = requests.get("http://xkcd.com/info.0.json").json()
 img = xkcd_json[u'img']

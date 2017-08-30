@@ -3,6 +3,7 @@
 import json
 import random as r
 import requests
+from credentials import *
 
 # URL Helper
 def _url(path):
@@ -28,7 +29,7 @@ def post_file(at, roomId, markdown, url=''):
     return file_dict
 
 #important stuff
-token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5"
+# token = "Bearer NjJkM2NkZTEtOTY4NS00N2UyLWIzMTEtZDFmYzA5M2JjNmYwZmVlYmY0OTgtZWI5"
 
 xkcd_json = requests.get("http://xkcd.com/info.0.json").json()
 num = str(r.randrange(0, xkcd_json[u'num'], 1))
