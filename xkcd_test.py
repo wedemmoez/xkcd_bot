@@ -38,6 +38,5 @@ xkcd_json = requests.get("http://xkcd.com/"+num+"/info.0.json").json()
 img = xkcd_json[u'img']
 # formatted for Spark markown
 alt = "**Hover Text**: " + xkcd_json[u'alt'] + ' **[permalink](http://xkcd.com/' + num + ')**'
-test_room = "Y2lzY29zcGFyazovL3VzL1JPT00vNThhNDNhNjAtMDM1OS0xMWU3LWIwYmItYzU1Y2QwYTRiMjQz"
 # Get Rooms, Parse JSON, psot to rooms tha bot is in
 post_file(token, test_room, alt, img)
