@@ -17,7 +17,7 @@ the crontab configuration included is what we chose to run within our organizati
 #### Contact  
 For questions about the code please create an Issue. 
 
-### License
+#### License
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
